@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="home-nav-panel">
+  <nav>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+  <footer>Copyright 2025-{{ now.Year }} by Josh Klos</footer>
+</div>
+{{ end }}

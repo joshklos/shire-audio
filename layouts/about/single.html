@@ -1,0 +1,57 @@
+{{ define "main" }}
+<div class="about">
+  <h2>{{ .Title }}</h2>
+
+  {{ with .Params.story }}
+  <section class="about-section">
+    <h2>Our Story</h2>
+    <p>{{ . }}</p>
+  </section>
+  <hr>
+  {{ end }}
+
+  {{ with .Params.bio_image }}
+  <section class="about-section bio-section">
+    <h2>Josh Klos</h2>
+    <img src="{{ . }}" alt="Josh Klos">
+    {{ $.Content }}
+  </section>
+  <hr>
+  {{ end }}
+
+  {{ with .Params.experience }}
+  <section class="about-section">
+    <h2>Experience</h2>
+    {{ range . }}
+      <p><strong>{{ .title }}</strong> — {{ .role }} — {{ .organization }}</p>
+    {{ end }}
+  </section>
+  <hr class="clear">
+  {{ end }}
+
+  {{ with .Params.audiobook_credits }}
+  <section class="about-section audiobooks">
+    <h2>Audiobook Credits</h2>
+    {{ range . }}
+      <h3>{{ .year }}</h3>
+      {{ if .books }}
+        <ul>
+          {{ range .books }}
+            <li>
+              <span class="book-title">{{ .title }}</span>
+              {{- if or .author .narrator .role }}
+              <ul class="book-details">
+                {{ with .author }}<li>Author: {{ . }}</li>{{ end }}
+                {{ with .narrator }}<li>Narrator: {{ . }}</li>{{ end }}
+                {{ with .role }}<li>Role: {{ . }}</li>{{ end }}
+              </ul>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    {{ end }}
+  </section>
+  {{ end }}
+</div>
+{{ end }}

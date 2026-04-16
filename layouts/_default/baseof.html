@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body{{ if .IsHome }} class="home"{{ end }}>
+  {{ if .IsHome }}
+    {{ partial "header-home.html" . }}
+  {{ else }}
+    {{ partial "header.html" . }}
+  {{ end }}
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ if not .IsHome }}
+    {{ partial "footer.html" . }}
+  {{ end }}
+</body>
+</html>

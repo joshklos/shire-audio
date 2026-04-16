@@ -1,0 +1,9 @@
+<header>
+  <h1><a href="/">{{ .Site.Title }}</a></h1>
+  <a class="logo-link" href="/"><img src="/images/vector-shire.svg" alt="{{ .Site.Title }} logo"></a>
+  <nav aria-label="Main navigation">
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}"{{ if eq $.RelPermalink .URL }} aria-current="page"{{ end }}>{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>

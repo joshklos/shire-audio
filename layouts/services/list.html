@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="services-page">
+  <h2>{{ .Title }}</h2>
+  <div class="services-intro">
+    {{ .Content }}
+  </div>
+  <div class="services-grid">
+    {{ range .Pages }}
+      <div class="service-card">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary }}</p>
+      </div>
+    {{ end }}
+  </div>
+  <h2>Let us know how we can help you</h2>
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <p><input type="text" name="name" placeholder="Name" required /></p>
+    <p><input type="email" name="email" placeholder="Email" required /></p>
+    <p><textarea name="message" rows="10" placeholder="Message" required></textarea></p>
+    <p><button class="submit-button" type="submit">Send</button></p>
+  </form>
+</div>
+{{ end }}

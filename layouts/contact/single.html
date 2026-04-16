@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="contact">
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <p><input type="text" name="name" placeholder="Name" required /></p>
+    <p><input type="email" name="email" placeholder="Email" required /></p>
+    <p><textarea name="message" rows="10" placeholder="Message" required></textarea></p>
+    <p><button class="submit-button" type="submit">Send</button></p>
+  </form>
+</div>
+{{ end }}

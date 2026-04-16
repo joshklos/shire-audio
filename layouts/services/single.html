@@ -1,0 +1,11 @@
+{{ define "main" }}
+<article class="service-page page-content">
+  {{ with .Params.icon }}<div class="service-icon-large">{{ . }}</div>{{ end }}
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  <div class="cta-block">
+    <p>Interested in this service?</p>
+    <a href="/contact/" class="btn">Get in Touch</a>
+  </div>
+</article>
+{{ end }}

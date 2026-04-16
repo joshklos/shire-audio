@@ -1,0 +1,29 @@
+{{ define "main" }}
+<h2>{{ .Title }}</h2>
+<div class="project-page">
+  <div class="project-sidebar">
+    {{ with .Params.cover_image }}<img src="{{ . }}" alt="{{ $.Title }}">{{ end }}
+    <div class="project-description">
+      {{ .Content }}
+    </div>
+  </div>
+
+  <div class="project-episodes">
+    {{ range .Params.episodes }}
+      <section>
+        <h4>{{ .title }}</h4>
+        <span class="episode-date">{{ .date }}</span>
+        {{ with .audio_file }}
+          <audio controls>
+            <source src="{{ . }}" type="audio/mpeg">
+          </audio>
+        {{ end }}
+        <div class="episode-description">{{ .description | markdownify }}</div>
+        {{ with .guests }}
+          <span class="episode-guests">Guest(s): {{ delimit . ", " }}</span>
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
