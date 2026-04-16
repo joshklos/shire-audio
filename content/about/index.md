@@ -2,7 +2,7 @@
 title: "About"
 description: "Learn about Shire Audio and Josh Klos, independent audio producer."
 bio_image: "/images/Josh_Bio.jpeg"
-
+type: "about"
 experience:
   - title: "The Biggest Story Podcast"
     role: "Executive Producer, Scriptwriter, Director"
