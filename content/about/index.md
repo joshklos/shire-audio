@@ -38,6 +38,7 @@ audiobook_credits:
     - title: "Persecution in Missions"
     - title: "In His Image"
   - year: 2025
+    books:
     - title: "Seasons of Waiting"
     - title: "The Gospel Comes with a House Key"
     - title: "Accessible Church"
