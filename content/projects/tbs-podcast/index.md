@@ -7,7 +7,7 @@ episodes:
     date: "2025-06-25"
     audio_file: "/media/tbs-noah.mp3"
     description: |
-		In this story, we learn that God sent a flood to judge all the wickedness on earth.
+        In this story, we learn that God sent a flood to judge all the wickedness on earth.
 	guests: []
   - title: "The Lord Is My Shepherd: The Story of Psalm 23<"
     date: "2026-02-25"
