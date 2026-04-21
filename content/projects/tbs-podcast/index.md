@@ -1,7 +1,7 @@
 ---
 title: "The Biggest Story Podcast"
 description: "Walk through the Bible."
-cover_image: "/images/tbs-podcast-cover.jpg"
+cover_image: "/images/tbs-podcast-cover.png"
 episodes:
   - title: "Rain, Rain, Go Away: The Story of Noah's Ark"
     date: "2025-06-25"
