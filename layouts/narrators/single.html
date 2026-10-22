@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="narrators-page">
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+
+  <div class="narrator-grid">
+    {{ range .Params.narrators }}
+      {{ $name := .name }}
+      <section class="narrator-card">
+        {{ with .photo }}<img src="{{ . }}" alt="{{ $name }}">{{ end }}
+        <h3>{{ $name }}</h3>
+
+        {{ with .voice }}
+        <dl class="narrator-voice">
+          {{ with .gender }}<dt>Gender</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with .age_range }}<dt>Age Range</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with .vocal_range }}<dt>Vocal Range</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with .accents }}<dt>Accents</dt><dd>{{ delimit . ", " }}</dd>{{ end }}
+          {{ with .style }}<dt>Style</dt><dd>{{ . }}</dd>{{ end }}
+        </dl>
+        {{ end }}
+
+        {{ range first 2 (.samples | default slice) }}
+          <div class="narrator-sample">
+            <h4>{{ .title }}</h4>
+            <audio controls preload="none">
+              <source src="{{ .file }}" type="audio/mpeg">
+            </audio>
+          </div>
+        {{ end }}
+      </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

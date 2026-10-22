@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ if .Params.noindex }}<meta name="robots" content="noindex, nofollow">{{ end }}
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body{{ if .IsHome }} class="home"{{ end }}>

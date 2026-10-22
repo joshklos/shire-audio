@@ -89,6 +89,25 @@ Edit `content/about/index.md`:
 - `audiobook_credits:` — books by year (YAML)
 - The markdown body is Josh's bio paragraph(s)
 
+### Update the narrator roster (unlisted)
+The roster lives at `/narrators/` and is intentionally not in the nav, the sitemap, or search engines (`noindex`). Anyone with the link can still view it.
+
+Edit `content/narrators/index.md` and add an entry to `narrators:`:
+```yaml
+  - name: "Jane Doe"
+    photo: "/images/narrators/jane-doe.jpg"       # in static/images/narrators/
+    voice:
+      gender: "Female"
+      age_range: "30s–40s"
+      vocal_range: "Alto"
+      accents: ["General American", "British RP"]
+      style: "Warm, conversational"
+    samples:                                       # max 2 are shown
+      - title: "Nonfiction excerpt"
+        file: "/media/narrators/jane-doe-nonfiction.mp3"  # in static/media/narrators/
+```
+Any field can be left out.
+
 ## Fonts
 
 Place your font files in `static/fonts/`. The CSS expects:

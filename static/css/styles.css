@@ -514,6 +514,64 @@ audio {
 
 .card-body h3 { margin-top: 0; }
 
+/* ─── Narrator roster ────────────────────────────────────── */
+.narrators-page {
+    width: 95%;
+    max-width: 75em;
+    margin: auto;
+}
+
+.narrator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    gap: 20px;
+}
+
+.narrator-card {
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.narrator-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.narrator-card h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.narrator-voice {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 12px;
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.narrator-voice dt {
+    font-family: var(--sans);
+    font-weight: 600;
+}
+
+.narrator-voice dd {
+    margin: 0;
+}
+
+.narrator-sample h4 {
+    margin: 12px 0 0;
+    font-size: 1rem;
+}
+
+.narrator-sample audio {
+    margin-top: 6px;
+}
+
 /* ─── Responsive: tablet ─────────────────────────────────── */
 @media only screen and (min-width: 600px) {
 
